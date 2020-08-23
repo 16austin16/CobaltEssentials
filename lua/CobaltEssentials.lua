@@ -143,7 +143,7 @@ function onVehicleSpawn(ID, vehID,  data)
 
 	--=print(data)
 
-	print(tostring(ID) .."Tried to spawn \"" .. vehName .. '"')
+	print(tostring(ID) .." Tried to spawn \"" .. vehName .. '"')
 
 
 	if M.hasPermission(ID, "spawnVehicles") == false then --TODO: flip the two around because it makes more sense
