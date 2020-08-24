@@ -1,4 +1,5 @@
 --Created by Preston Elam (CobaltTetra) 2020
+--Forked by 16austin16 (16austin16#6969)
 --THIS COBALTESSENTIALS IS PROTECTED UNDER AN GPLv3 LICENSE
 --FURTHERMORE YOU MAY EDIT THIS SCRIPT, BUT BY USING IT YOU AGREE TO NOT REMOVE THE CREDIT ON THE FIRST LINE IF IT IS RESDITRIBUTED, YOUR OWN CREDIT MAY BE ADDED ON LINE2.
 
@@ -151,7 +152,7 @@ function onVehicleSpawn(ID, vehID,  data)
 		print("Spawn Blocked")
 		return 1
 	else
-		if not registeredVehicles[vehName] == nil or registeredVehicles[vehName].reqPerm <= players[ID].perms then
+		if not check4property(registeredVehicles, vehName) or registeredVehicles[vehName].reqPerm <= players[ID].perms then
 			print("Spawn successful")
 		else
 			print("Spawn Blocked")
@@ -394,6 +395,16 @@ local function split(s, sep)
     string.gsub(s, pattern, function(c) fields[#fields + 1] = c end)
 
     return fields
+end
+
+function check4property(obj, prop)
+    return ({pcall(function()if(typeof(obj[prop])=="Instance")then error()end end)})[1]
+end
+
+function tablelength(T)
+  local count = 0
+  for _ in pairs(T) do count = count + 1 end
+  return count
 end
 
 

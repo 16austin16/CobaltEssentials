@@ -27,8 +27,7 @@ local function onInit()
 	--ID-TYPE-MAP: 1: discordID | 2: HWID | 3: NAME
 	--CE.registerUser(identifier,IDtype,permissionLevel,specialPerms)
 
-	CE.registerUser("Preston", 3, 10) --never do permissions by name, this is just an example.
-	CE.registerUser("531662154303143951", 1, 10) --use the discord ID like this
+	CE.registerUser("184179207172128769", 1, 10) --use the discord ID like this
 
 
 	-----------------------------------------PERMISSIONS-----------------------------------------
@@ -43,10 +42,10 @@ local function onInit()
 	--used to set up chat commands and their required permission level, takes a standard pointer to a function.
 	--CE.registerCommand(command, function, requiredPermissionLevel)
 
-	CE.registerCommand("kick", CC.kick, 5, "kick a player from the session")
-	CE.registerCommand("ban", CC.ban, 6, "ban a player from the session")
-	CE.registerCommand("list",CC.list, 0, "get a list of each player and their ID")
-	CE.registerCommand("help",CC.help,0, "get a list of each command")
+	CE.registerCommand("kick", CC.kick, 5, "Kick a player from the session")
+	CE.registerCommand("ban", CC.ban, 6, "Ban a player from the session")
+	CE.registerCommand("list", CC.list, 0, "Get a list of each player and their ID")
+	CE.registerCommand("help", CC.help, 0, "Get a list of each commmand")
 
 	--CE.registerCommand("testServer", server.makeServer, 0)
 
@@ -58,7 +57,7 @@ local function onInit()
 	--ID-TYPE-MAP: 1: discordID | 2: HWID | 3: NAME
 	--CE.addWhitelist(identifier,IDtype)
 
-	CE.addWhitelist("Preston", 3)
+	CE.addWhitelist("184179207172128769", 1)
 
 
 		

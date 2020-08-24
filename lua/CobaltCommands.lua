@@ -48,12 +48,17 @@ local function list(args)
 end
 
 local function help(args)
+	SendChatMessage(args[0], "-----Help Menu-----")
+	perm = tonumber(CE.getPlayer(args[0]).perms)
 	for k,v in pairs(CE.getCommands()) do
-		SendChatMessage(args[0], tostring(k) .. ": " .. v.desc)
+		reqPerm = tonumber(v.reqPerm)
+		if perm >= reqPerm then
+			SendChatMessage(args[0], tostring(k) .. ": " .. tostring(v.desc))
+			Sleep(10)
+		end
 	end
+	SendChatMessage(args[0], "-----End-----")
 end
-
-
 
 ------------------------------------------------------PUBLICINTERFACE------------------------------------------------------
 
